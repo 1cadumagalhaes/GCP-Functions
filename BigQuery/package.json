@@ -1,0 +1,25 @@
+{
+  "name": "gcpfunctions_bigquery",
+  "version": "1.0.0",
+  "description": "Collection of javascript functions using googlecloud api for bigquery",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/magalhaescarlos/GCP-Functions.git"
+  },
+  "keywords": [
+    "Google-Cloud"
+  ],
+  "author": "magalhaescarlos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magalhaescarlos/GCP-Functions/issues"
+  },
+  "homepage": "https://github.com/magalhaescarlos/GCP-Functions#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^4.3.0"
+  }
+}
