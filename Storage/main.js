@@ -8,6 +8,12 @@ async function getFileStringFromStorage(inputBucketName,fileName){
     return contentString;
 }
 
+
+async function main(bucket, file){
+  let str = await getFileStringFromStorage(bucket,file);
+  console.log(str);
+}
+
 //Recebe o bucket e o nome do arquivo e retorna a string do arquivo. 
 
 
@@ -34,7 +40,7 @@ async function createFileInStorage(outputBucketName,filePath, string){
 //Recebe o nome do bucket, o caminho/nome.extensão do arquivo e a string de conteúdo e salva no Cloud Storage
 
 
-async function movefiles(inputBucket,fileName,outputBucket){
+async function moveFiles(inputBucket,fileName,outputBucket){
   const storage = new Storage();
   let newLocation = `gs://${outputBucket}/${fileName}`;
   await storage.bucket(inputBucket).file(fileName).move(newLocation).catch(e=>console.error(e));
