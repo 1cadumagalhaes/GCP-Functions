@@ -5,7 +5,7 @@ const mimeType= 'application/pdf';
 
 exports.extractText = async (data,context) =>{
     try{
-        const bucket = await getBucket();
+        const bucket = data["bucket"];
         const gcsDestinationUri = `gs://${bucket}-visionoutput/` ;
         asyncExtractText(data, gcsDestinationUri);
     }catch(e){
@@ -13,10 +13,6 @@ exports.extractText = async (data,context) =>{
     }
 };
 
-
-async function getBucket(){
-    return ;
-}
 
 async function asyncExtractText(data, gcsDestinationUri){
     const client = new vision.ImageAnnotatorClient();
@@ -43,7 +39,7 @@ async function asyncExtractText(data, gcsDestinationUri){
         batchSize,
     };
 
-    const features = [{type:'DOCUMENT_TEXT_DETECTION'}]; //TEXT_DETECTION
+    const features = [{type:'TEXT_DETECTION'}];
 
     const request = {
         requests: [{
