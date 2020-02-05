@@ -50,8 +50,8 @@ Recebe o nome do Bucket dentro do GCS e retorna a lista de objetos (arquivos) de
 ```
 async function main(){
     let bucket = 'gcp-functions-test-123';
-    let str = await getFilesFromStorage(bucket);
-    let list = str.map(item=>item["name"]); //array com os nomes dos arquivos dentro do bucket gcp-functions-test-123
+    let files = await getFilesFromStorage(bucket);
+    let list = files.map(item=>item["name"]); //array com os nomes dos arquivos dentro do bucket gcp-functions-test-123
     console.log(list); // ['test.txt','test.json']
 }
 ```
@@ -59,10 +59,10 @@ async function main(){
 
 #### **createFileInStorage(outputBucketName,filePath, string)**
 
-Recebe o nome do Bucket dentro do GCS e retorna a lista de objetos (arquivos) dentro dele.
+Cria um arquivo em um bucket com o conteúdo sendo uma string.
 
 **Argumentos**
-- `inputBucketName`: String com o nome do bucket. Por exemplo, *gcp-functions-test-123*
+- `outputBucketName`: String com o nome do bucket. Por exemplo, *gcp-functions-test-123*
 - `filePath`: String com o caminho/nome do arquivo a ser salvo. Exemplo: *arquivos/test.json*
 - `string`: String de conteúdo do arquivo.
 
@@ -83,7 +83,7 @@ async function main(){
 
 #### **moveFiles(inputBucket,fileName,outputBucket)**
 
-Recebe o nome do Bucket dentro do GCS e retorna a lista de objetos (arquivos) dentro dele.
+Move um arquivo do inputBucket para o outputBucket.
 
 **Argumentos**
 - `inputBucket`: String com o nome do bucket de entrada. Por exemplo, *gcp-functions-test-123*
