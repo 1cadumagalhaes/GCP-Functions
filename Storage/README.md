@@ -9,7 +9,7 @@ Pode ser utilizado para pegar o conteúdo de arquivos de texto, json, csv, yaml 
 
 **Argumentos**
 - `inputBucketName`: String com o nome do bucket. Por exemplo, *gcp-functions-test-123*
-- `fileName`: String com o nome do arquivo, inclusive com a ehchromxtensão. Caso o arquivo esteja dentro de uma pasta, colocar o nome da pasta concatenado. Exemplo: *arquivo/teste.txt*
+- `fileName`: String com o nome do arquivo, inclusive com a extensão. Caso o arquivo esteja dentro de uma pasta, colocar o nome da pasta concatenado. Exemplo: *arquivo/teste.txt*
 
 **Retorno**
 - **String**: String do conteúdo do arquivo. 
